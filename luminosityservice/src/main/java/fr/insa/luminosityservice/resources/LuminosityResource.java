@@ -1,16 +1,25 @@
-package fr.insa.luminosity.resources;
+package fr.insa.luminosityservice.resources;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.insa.luminosityservice.model.LuminositySensor;
+
 @RestController
 @RequestMapping("/luminosity")
 public class LuminosityResource {
+	
+	private LuminositySensor sensor = new LuminositySensor("lum1"); 
 
+	@GetMapping("/")
+	public LuminositySensor getSensor() {
+		return sensor; 
+	}
+	
 	@GetMapping("/value")
 	public int getLuminosity() {
-		return (int) Math.ceil(Math.random()*100);
+		return sensor.getLuminosity(); 
 	}
 
 }
