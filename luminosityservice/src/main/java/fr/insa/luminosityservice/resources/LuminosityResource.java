@@ -10,7 +10,7 @@ import fr.insa.luminosityservice.model.LuminositySensor;
 @RequestMapping("/luminosity")
 public class LuminosityResource {
 	
-	private LuminositySensor sensor = new LuminositySensor("lum1"); 
+	private LuminositySensor sensor = new LuminositySensor("LuminositySensor"); 
 
 	@GetMapping("/")
 	public LuminositySensor getSensor() {
